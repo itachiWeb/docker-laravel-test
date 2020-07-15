@@ -6,7 +6,8 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
 
   # Node.jsをインストール
-RUN apk add --update nodejs nodejs-npm
+RUN apk add --update nodejs nodejs-npm && \
+npm install
 
 RUN set -eux && \
   apk add --update-cache --no-cache --virtual=.build-dependencies tzdata && \
